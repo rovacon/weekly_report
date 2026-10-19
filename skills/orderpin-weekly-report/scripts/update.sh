@@ -17,7 +17,11 @@ esac
 [[ -z "$(git status --porcelain --untracked-files=all)" ]] || {
   echo "Local changes found. Preserve them before updating; nothing was overwritten." >&2; exit 1;
 }
-git fetch --no-tags origin main
+# Scheduled runs must not wait for an interactive credential prompt.
+export GIT_TERMINAL_PROMPT=0
+export GCM_INTERACTIVE=Never
+export GIT_SSH_COMMAND="${GIT_SSH_COMMAND:-ssh} -o BatchMode=yes -o ConnectTimeout=15"
+git -c http.lowSpeedLimit=1 -c http.lowSpeedTime=30 fetch --no-tags origin main
 [[ "$(git rev-list --count FETCH_HEAD..HEAD)" == "0" ]] || {
   echo "Local-only commits found. Resolve them before running the weekly skill." >&2; exit 1;
 }
