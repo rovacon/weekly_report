@@ -1,0 +1,4 @@
+interface:
+  display_name: "OrderPin 工作周报"
+  short_description: "先更新统一规则，再根据授权的 OrderPin 工作记录生成并通过 DWS 提交周报"
+  default_prompt: "使用 $orderpin-weekly-report，先更新并重新读取最新规则，再整理我的 OrderPin 周报。"
