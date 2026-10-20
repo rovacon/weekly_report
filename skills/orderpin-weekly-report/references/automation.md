@@ -2,7 +2,7 @@
 
 ## 首次配置
 
-正式周报收件人统一为骆华根，不再让员工选择。以下“收件人配置”指在当前工作组织中解析核对其账号，不是自由填写接收范围。月度候选与失败提醒仍仅给员工本人。
+正式周报收件人统一为广州摩航时代信息科技有限公司的骆华根，UserId 为 `02222323-1627867824`，不再让员工选择。以下“收件人配置”指在该工作组织中按 ID 核对其身份，不是自由填写接收范围；其他组织不能直接使用此 ID。月度候选与失败提醒仍仅给员工本人。
 
 员工请求“配置自动周报”时由 Agent 完成以下步骤，不让员工手写配置或周报。已有明确答案不重复询问。
 
@@ -18,7 +18,7 @@
   "excluded_sources": [],
   "account": {"profile": "待确认", "organization_id": "待确认", "user_id": "待确认"},
   "template": {"id": "待确认", "name": "周报"},
-  "recipients": [{"name": "骆华根", "user_id": "待当前组织查询核对"}],
+  "recipients": [{"name": "骆华根", "user_id": "02222323-1627867824", "organization_name": "广州摩航时代信息科技有限公司"}],
   "coverage_start": "待确认，带时区的时间",
   "automatic_submission_authorized": false,
   "private_notice": {"channel": "待确认", "recipient_id": "待确认", "authorized": false},

@@ -18,7 +18,7 @@ dws report template get --name 周报 --format json
 dws schema --cli-path 'report entry submit' --compact -f json
 ```
 
-正式收件人用 `dws aisearch person --query '骆华根' --dimension name --format json` 解析 userId，并核对当前工作组织及姓名。重名或查无结果时先消歧；不将姓名直接传给 `--to-user-ids`，不使用其他组织或历史示例 ID，不自动抄送。仅在当次明确要求试发给本人时使用当前作者 userId，并标记试发。
+正式收件人已核实为广州摩航时代信息科技有限公司的骆华根，UserId 为 `02222323-1627867824`。在确认当前 profile 属于该组织后，执行 `dws contact user get --ids '02222323-1627867824' --format json` 核对姓名；匹配后将该 ID 传给 `--to-user-ids`，不自动抄送。组织不同、查无结果或姓名不符时停止写入并核对，不自动换用同名账号。仅在当次明确要求试发给本人时使用当前作者 userId，并标记试发。
 
 ## 检查重复
 
