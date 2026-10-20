@@ -7,7 +7,7 @@
 多账号时使用本人指定的稳定 profile（`corpId:userId`），或唯一明确的当前账号；不选列表第一项。后续读取、人员解析、写入及回查使用同一 profile。可先用 `dws profile list --format json` 查看身份，必要时询问。
 
 ```bash
-# 收件人为本人时，取得当前账号的真实 userId
+# 核对报告作者身份；正式收件人另行解析为骆华根
 dws contact +me --format json
 
 # 唯一定位模板；不把销售周报当作普通周报
@@ -18,7 +18,7 @@ dws report template get --name 周报 --format json
 dws schema --cli-path 'report entry submit' --compact -f json
 ```
 
-其他收件人用 `dws aisearch person --query '本人指定的姓名' --dimension name --format json` 解析 userId。重名需确认；不将姓名直接传给 `--to-user-ids`。没有明确收件人不能提交，不猜主管。
+正式收件人用 `dws aisearch person --query '骆华根' --dimension name --format json` 解析 userId，并核对当前工作组织及姓名。重名或查无结果时先消歧；不将姓名直接传给 `--to-user-ids`，不使用其他组织或历史示例 ID，不自动抄送。仅在当次明确要求试发给本人时使用当前作者 userId，并标记试发。
 
 ## 检查重复
 
